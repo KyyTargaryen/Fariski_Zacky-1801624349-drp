@@ -1,10 +1,10 @@
 # Fariski_Zacky-1801624349-drp
-Ketua
+Ketua:
 Nama: Fariski Zacky
 
 NIM: 1801624349
 
-Anggota
+Anggota:
 Nama: Jwan Ahmad Lintang Pawikan
 
 NIM:1801624288
