@@ -4,13 +4,31 @@ from datetime import datetime
 aktivitas = input("Masukkan aktivitas (sarapan/berangkat kerja): ").lower()
 
 if aktivitas == "sarapan":
-    menu = input("Menu sarapan yang diinginkan: ").lower()
-    bahan_tersedia = ["telur", "ikan", "nugget"]
+    print("Menu Sarapan yang Tersedia:")
+    print("1. Telur")
+    print("2. Ikan")
+    print("3. Nugget")
+    print("4. Lainnya")
 
-    if menu in bahan_tersedia:
-        print(f"Menu {menu} tersedia, perlu dimasak terlebih dahulu.")
-    else:
-        print(f"Bahan untuk menu {menu} tidak ada, harus membeli dulu.")
+    pilihan = input ("Pilih Menu 1-4: ")
+
+    if pilihan == "1":
+        menu = "telur"
+        print(f"menu {menu} tersedia, akan dimasak terlebih dahulu")
+
+    elif pilihan == "2":
+        menu = "ikan"
+        print(f"menu {menu} tersedia, akan dimasak terlebih dahulu")
+
+    elif pilihan == "3":
+        menu = "nugget"
+        print(f"menu {menu} tersedia, akan dimasak terlebih dahulu")
+
+    elif pilihan == "4":
+        menu = input("Masukkan menu lain: "). lower()
+        print(f"bahan untuk menu {menu} tidak ada, harus membeli dahulu")
+
+    
 
 elif aktivitas == "berangkat kerja":
     jam_sekarang = datetime.now()
