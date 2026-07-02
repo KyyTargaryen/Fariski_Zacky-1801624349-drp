@@ -5,7 +5,7 @@ from tools import (
     analyze_mood,
     show_result
 )
-from manager.database import init_db, save_mood, get_history
+from Manager.database import init_db, save_mood, get_history
 
 def main():
     print("Welcome to Renjana")
