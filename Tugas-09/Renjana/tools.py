@@ -71,8 +71,9 @@ def analyze_mood(data):
         return "Mood Negatif 😞"
 
 def show_result(mood_result, history):
-    print("\n Yeay This is your mood today!")
+    print("\nYeay! This is your mood today!")
     print(f"Hasil analisis mood: {mood_result}")
-    print("\n Mood kamu sebelumnya")
-    for date, result in history:
-        print(f"{date} → {result}")
+
+    print("\nRiwayat Mood")
+    for id, date, result in history:
+        print(f"[{id}] {date} → {result}")
