@@ -5,7 +5,13 @@ from tools import (
     analyze_mood,
     show_result
 )
-from Manager.database import init_db, save_mood, get_history
+from Manager.database import (
+    init_db,
+    save_mood,
+    get_history,
+    update_mood,
+    delete_mood
+)
 
 def main():
     print("Welcome to Renjana")
@@ -33,6 +39,27 @@ def main():
 
     # 7. Tampilkan hasil + riwayat
     show_result(mood_result, history)
+
+print("\n=== Menu CRUD ===")
+print("1. Update Mood")
+print("2. Hapus Mood")
+print("3. Selesai")
+
+pilihan = input("Pilih menu (1/2/3): ")
+
+if pilihan == "1":
+    id_mood = int(input("Masukkan ID mood yang ingin diupdate: "))
+    hasil_baru = input("Masukkan hasil mood baru: ")
+    update_mood(id_mood, hasil_baru)
+    print("✅ Data mood berhasil diperbarui.")
+
+elif pilihan == "2":
+    id_mood = int(input("Masukkan ID mood yang ingin dihapus: "))
+    delete_mood(id_mood)
+    print("✅ Data mood berhasil dihapus.")
+
+else:
+    print("Terima kasih telah menggunakan Renjana.")
 
 if __name__ == "__main__":
     main()
