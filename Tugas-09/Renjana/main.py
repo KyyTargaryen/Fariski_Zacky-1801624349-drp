@@ -40,26 +40,32 @@ def main():
     # 7. Tampilkan hasil + riwayat
     show_result(mood_result, history)
 
-print("\n=== Menu CRUD ===")
-print("1. Update Mood")
-print("2. Hapus Mood")
-print("3. Selesai")
+    print("\n=== Menu CRUD ===")
+    print("1. Update Mood")
+    print("2. Hapus Mood")
+    print("3. Selesai")
 
-pilihan = input("Pilih menu (1/2/3): ")
+    pilihan = input("Pilih menu (1/2/3): ")
 
-if pilihan == "1":
+    if pilihan == "1":
     id_mood = int(input("Masukkan ID mood yang ingin diupdate: "))
     hasil_baru = input("Masukkan hasil mood baru: ")
     update_mood(id_mood, hasil_baru)
     print("✅ Data mood berhasil diperbarui.")
 
-elif pilihan == "2":
+    history = get_history()
+    show_result("Data berhasil diperbarui", history)
+    
+    elif pilihan == "2":
     id_mood = int(input("Masukkan ID mood yang ingin dihapus: "))
     delete_mood(id_mood)
     print("✅ Data mood berhasil dihapus.")
 
-else:
-    print("Terima kasih telah menggunakan Renjana.")
+    history = get_history()
+    show_result("Data berhasil dihapus", history)
+
+    else:
+        print("Terima kasih telah menggunakan Renjana.")
 
 if __name__ == "__main__":
     main()
