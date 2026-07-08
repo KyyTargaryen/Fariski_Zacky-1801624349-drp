@@ -21,34 +21,35 @@ emoji_game = {
 def mini_game():
     print("\n Stop! Tebak-tebakan dulu yuk")
     print("Kamu bisa 'Lewati' jika tidak ingin bermain.")
-    responses = []
+    score = 0
     for emoji, word in emoji_game.items():
         print(f"Tebak kata dari emoji {emoji}")
         guess = input("Jawaban: ").strip().lower()
         if guess == "lewati":
             print("⏩ Kamu memilih untuk melewati game.")
-            responses.append("😞")
-        elif guess == word:
+        elif guess == word.lower():
             print("🎉 Benar! +1 poin 😊")
-            responses.append("😊")
+            score += 1
         else:
             print(f"😅 Salah, kata yang benar adalah '{word}'.")
-            responses.append("😞")
-    return responses
+    print(f"Skor mini game kamu: {score}")
+    return score
+
+
 
 def daily_questionnaire():
     responses = []
     print("Jawab dengan 'yes' atau 'no'.")
     for idx, q in enumerate(questions):
         ans = input(f"{q} (yes/no): ").strip().lower()
-        if ans == "ya":
+        if ans == "yes":
             responses.append("😊")
         else:
             responses.append("😞")
 
         # Sisipkan game setelah pertanyaan ke-5
         if idx == 4:
-            responses.extend(mini_game())
+            mini_game()
 
     return responses
 

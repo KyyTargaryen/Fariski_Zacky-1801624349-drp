@@ -1,6 +1,6 @@
 from tools import (
     daily_questionnaire,
-    play_game,
+    mini_game,
     process_data,
     analyze_mood,
     show_result
@@ -16,22 +16,19 @@ def main():
     # 1. Kuesioner
     responses = daily_questionnaire()
 
-    # 2. Mini Game (setelah kuesioner selesai)
-    responses = play_game(responses)
-
-    # 3. Pengolahan Data
+    # 2. Pengolahan Data
     processed_data = process_data(responses)
 
-    # 4. Analisis Mood
+    # 3. Analisis Mood
     mood_result = analyze_mood(processed_data)
 
-    # 5. Simpan ke database
+    # 4. Simpan ke database
     save_mood(mood_result)
 
-    # 6. Ambil riwayat mood
+    # 5. Ambil riwayat mood
     history = get_history()
 
-    # 7. Tampilkan hasil + riwayat
+    # 6. Tampilkan hasil + riwayat
     show_result(mood_result, history)
 
 if __name__ == "__main__":
