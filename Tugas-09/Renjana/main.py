@@ -1,6 +1,5 @@
 from tools import (
     daily_questionnaire,
-    mini_game,
     process_data,
     analyze_mood,
     show_result
@@ -13,7 +12,7 @@ def main():
     # Inisialisasi database
     init_db()
 
-    # 1. Kuesioner
+    # 1. Kuesioner (mini game otomatis muncul setelah pertanyaan ke-5)
     responses = daily_questionnaire()
 
     # 2. Pengolahan Data

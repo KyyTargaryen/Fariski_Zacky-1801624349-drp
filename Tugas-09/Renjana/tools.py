@@ -11,22 +11,21 @@ questions = [
     "10. Apakah kamu merasa optimis bahwa hari esok akan berjalan dengan baik?"
 ]
 
-# Mini game dengan emoji tetap (tidak random)
 emoji_game = {
-    "👍🏻🌏": "Sukabumi",
+    "👍🌍": "Sukabumi",
     "💡🆖": "Lampung",
     "🦁👑": "Singaraja"
 }
 
 def mini_game():
     print("\n Stop! Tebak-tebakan dulu yuk")
-    print("Kamu bisa 'Lewati' jika tidak ingin bermain.")
+    print("Tebak-tebakan emoji! (ketik 'lewati' untuk skip)")
     score = 0
     for emoji, word in emoji_game.items():
         print(f"Tebak kata dari emoji {emoji}")
         guess = input("Jawaban: ").strip().lower()
         if guess == "lewati":
-            print("⏩ Kamu memilih untuk melewati game.")
+            print("⏩ Kamu melewati game ini.")
         elif guess == word.lower():
             print("🎉 Benar! +1 poin 😊")
             score += 1
@@ -34,8 +33,6 @@ def mini_game():
             print(f"😅 Salah, kata yang benar adalah '{word}'.")
     print(f"Skor mini game kamu: {score}")
     return score
-
-
 
 def daily_questionnaire():
     responses = []
@@ -49,7 +46,7 @@ def daily_questionnaire():
 
         # Sisipkan game setelah pertanyaan ke-5
         if idx == 4:
-            mini_game()
+            mini_game()   # game dipanggil sekali di sini
 
     return responses
 
@@ -64,16 +61,16 @@ def process_data(responses):
 
 def analyze_mood(data):
     total = sum(data)
-    if total >= 12:
-        return "Mood Sangat Positif 😊"
-    elif total >= 8:
+    if total >= 8:
+        return "Mood Positif 😊"
+    elif total >= 5:
         return "Mood Cukup Positif 🙂"
     else:
         return "Mood Negatif 😞"
 
 def show_result(mood_result, history):
     print("\n Yeay This is your mood today!")
-    print(f"Hasil analisis mood: {mood_result}")
-    print("\n Mood kamu sebelumnya")
+    print(f"Hasil mood hari ini: {mood_result}")
+    print("\nRiwayat mood sebelumnya:")
     for date, result in history:
         print(f"{date} → {result}")
