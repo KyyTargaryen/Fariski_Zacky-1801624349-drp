@@ -18,10 +18,10 @@ emoji_game = {
     "🦁👑": "Singaraja"
 }
 
-def mini_game():
+def play_game(responses):
     print("\n Stop! Tebak-tebakan dulu yuk")
     print("Kamu bisa 'Lewati' jika tidak ingin bermain.")
-    responses = []
+    
     for emoji, word in emoji_game.items():
         print(f"Tebak kata dari emoji {emoji}")
         guess = input("Jawaban: ").strip().lower()
@@ -41,14 +41,10 @@ def daily_questionnaire():
     print("Jawab dengan 'yes' atau 'no'.")
     for idx, q in enumerate(questions):
         ans = input(f"{q} (yes/no): ").strip().lower()
-        if ans == "ya":
+        if ans in ["yes", "ya"]:
             responses.append("😊")
         else:
             responses.append("😞")
-
-        # Sisipkan game setelah pertanyaan ke-5
-        if idx == 4:
-            responses.extend(mini_game())
 
     return responses
 
