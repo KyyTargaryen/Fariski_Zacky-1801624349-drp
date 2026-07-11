@@ -4,13 +4,31 @@ from tools import (
     analyze_mood,
     show_result
 )
-from Manager.database import init_db, save_mood, get_history
+from Manager.database import add_priority, get_priorities, init_db, init_priorities, save_mood, get_history
 
 def main():
     print("Welcome to Renjana")
+    print ("Menu:")
+    print("1. Isi kuesioner")
+    print("2. Export data mood ke JSON")
+    print("3. Import data mood dari JSON")
+    print("4. Tambah Prioritas Aktivitas")
+    print("5. Lihat Prioritas Aktivitas")
 
-    # Inisialisasi database
+    choice = input("Pilih menu (1/2/3/4/5): ").strip()
+
+    if choice == "4":
+        kategori = input("Masukkan kategori aktivitas: ")
+        add_priority(kategori)
+
+    elif choice == "5":
+        priorities = get_priorities()
+        for p in priorities:
+            print(p)
+
+    # Inisialisasi database + tabel prioritas
     init_db()
+    init_priorities()
 
     # 1. Kuesioner (mini game otomatis muncul setelah pertanyaan ke-5)
     responses = daily_questionnaire()
@@ -32,3 +50,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+

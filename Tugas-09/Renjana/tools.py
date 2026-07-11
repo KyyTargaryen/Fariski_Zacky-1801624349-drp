@@ -61,9 +61,9 @@ def process_data(responses):
 
 def analyze_mood(data):
     total = sum(data)
-    if total >= 8:
+    if total >= 6:
         return "Mood Positif 😊"
-    elif total >= 5:
+    elif total >= 4:
         return "Mood Cukup Positif 🙂"
     else:
         return "Mood Negatif 😞"
