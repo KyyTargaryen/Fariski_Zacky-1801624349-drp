@@ -30,7 +30,7 @@ def mini_game():
             print("Benar! +1 poin 😊")
             score += 1
         else:
-            print(f"😅 Salah, kata yang benar adalah '{word}'.")
+            print(f"Salah, kata yang benar adalah '{word}'.")
     print(f"Skor mini game kamu: {score}")
     return score
 
