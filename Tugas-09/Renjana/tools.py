@@ -27,7 +27,7 @@ def mini_game():
         if guess == "lewati":
             print("⏩ Kamu melewati game ini.")
         elif guess == word.lower():
-            print("🎉 Benar! +1 poin 😊")
+            print("Benar! +1 poin 😊")
             score += 1
         else:
             print(f"😅 Salah, kata yang benar adalah '{word}'.")
