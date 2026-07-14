@@ -7,8 +7,10 @@ from tools import (
 from Manager.database import add_priority, get_priorities, init_db, init_priorities, save_mood, get_history
 
 def main():
+    print("==================") 
     print("Welcome to Renjana")
-    print ("Menu:")
+    print("=================")
+    print("Menu:")
     print("1. Isi kuesioner")
     print("2. Export data mood ke JSON")
     print("3. Import data mood dari JSON")
